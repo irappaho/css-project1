@@ -1,0 +1,300 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Typography
+# Links
+# Elements
+# Forms
+# Content
+
+# Navigation
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+/* Typography
+	 ========================================================================== */
+
+body {
+  color: rgb(36, 38, 43);
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Rubik', Arial, sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  color: rgb(180, 9, 55);
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.5;
+  max-width: 75ch;
+}
+
+blockquote {
+  border-left: 5px solid rgb(180, 9, 55);
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 2em;
+  font-style: italic;
+  margin: 2em;
+  max-width: 50vw;
+  padding: 0 1em;
+  /*position: relative;
+  quotes: "“" "”" "‘" "’";*/
+}
+
+/*blockquote:before {
+  content: open-quote;
+  font-size: 2em;
+  left: 0;
+  position: absolute;
+  top: 1vw;
+}*/
+
+/* Color overrides */
+
+.white {
+  color: rgb(255, 255, 255) !important;
+}
+
+
+/* Links
+	 ========================================================================== */
+
+a {
+  color: rgb(	0, 102, 198);
+  text-decoration: none;
+}
+
+a:visited {}
+
+a:hover, a:focus, a:active {
+	color: rgb(97, 152, 255);
+  text-decoration: underline;
+  transition: all 0.2s;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover, a:active {
+	outline: 0;
+}
+
+a.btn-primary,
+a.btn-alt {
+  border: 2px solid rgb(180, 9, 55);
+  display: inline-block;
+  margin: 0 1.5em 1.5em 0;
+  padding: .75em 1.5em;
+  text-decoration: none;
+}
+
+a.btn-primary {
+  background-color: rgb(180, 9, 55);
+  color: rgb(255, 255, 255);
+}
+
+a.btn-primary:hover {
+  background-color: rgb(149, 0, 34);
+}
+
+a.btn-alt {
+  color: rgb(180, 9, 55);
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  /*overflow: hidden;*/
+}
+
+a.btn-alt::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-color: rgb(180, 9, 55);
+  border-style: solid;
+  border-width: 0;
+  -webkit-transition-property: border-width;
+  transition-property: border-width;
+  -webkit-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+a.btn-alt:hover::before {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  border-width: 4px;
+}
+
+a.arrow-link {
+  font-weight: 700;
+}
+
+a.arrow-link:hover {
+  text-decoration: none;
+}
+
+a.arrow-link::after {
+  content: "\2192";
+  display: inline-block;
+  height: 8px;
+  margin-left: 9px;
+  transition: margin-left .2s ease-out;
+  width: 12px;
+}
+
+a.arrow-link:hover::after {
+  margin-left: 14px;
+  transition: margin-left .2s ease-in;
+}
+
+ /* Elements
+ 	 ========================================================================== */
+
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul > li,
+ol > li {
+  padding-bottom: .75em;
+}
+
+ul.caret-list {
+  list-style: none;
+}
+
+ul.caret-list li::before {
+  content: "\203A";
+  padding-right: .5em;
+  margin-left: -1em;
+}
+
+table {
+  border-collapse: collapse;
+	margin: 1em 0 3em;
+  min-width: 50vw;
+}
+
+thead {
+  background-color: rgb(242, 243, 244);
+}
+
+th,
+td {
+  line-height: 1.5;
+  padding: .5em;
+  text-align: left;
+}
+
+tr {
+  border-bottom: 1px solid rgb(210, 213, 219);
+  line-height: 2;
+}
+
+tr:hover {
+  background: rgb(210, 213, 219);
+}
+
+hr {
+  background-color: rgb(210, 213, 219);
+  border: 0;
+  height: 1px;
+}
+
+img {
+  height: auto;
+  width: 100%;
+}
+
+/* Forms
+	 ========================================================================== */
+
+
+
+/* Page Content
+  ========================================================================== */
+
+main {
+  margin: 0 auto;
+  width: 90vw;
+}
+
+.gradient-img {
+  align-items: center;
+  background: linear-gradient(45deg, rgba(180, 9, 55, .5), rgba(0, 102, 198, .25)),
+              url("img/aqua.jpg") no-repeat center;
+  background-size: cover;
+  display: flex;
+  height: 500px;
+  justify-content: center;
+}
+
+.gradient-img h1 {
+  color: rgb(255, 255, 255);
+}
+
+.dark-bg {
+  background: rgb(36, 38, 43);
+  color: rgb(255, 255, 255);
+  padding: 5vw;
+}
+
+.red-bg {
+  background-color: rgb(180, 9, 55);
+  color: rgb(255, 255, 255);
+  padding: 2em;
+  margin: 2em 0;
+  width: 50vw;
+}
+
+.full-width {
+  left: 50%;
+  position: relative;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  right: 50%;
+  width: 100vw;
+}
