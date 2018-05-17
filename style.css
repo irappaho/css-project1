@@ -6,16 +6,6 @@
 # Elements
 # Forms
 # Content
-
-# Navigation
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
 --------------------------------------------------------------*/
 
 * {
@@ -23,7 +13,7 @@
 }
 
 /* Typography
-	 ========================================================================== */
+========================================================================== */
 
 body {
   color: rgb(36, 38, 43);
@@ -55,7 +45,9 @@ h3 {
 }
 
 h4 {
-  font-weight: 700;
+  color: rgb(130, 132, 138);
+  text-transform: uppercase;
+  margin-bottom: 0;
 }
 
 p {
@@ -92,27 +84,27 @@ blockquote {
 
 
 /* Links
-	 ========================================================================== */
+========================================================================== */
 
 a {
-  color: rgb(	0, 102, 198);
+  color: rgb(	0, 148, 216);
   text-decoration: none;
 }
 
 a:visited {}
 
 a:hover, a:focus, a:active {
-	color: rgb(97, 152, 255);
+  color: rgb(0, 177, 255);
   text-decoration: underline;
   transition: all 0.2s;
 }
 
 a:focus {
-	outline: thin dotted;
+  outline: thin dotted;
 }
 
 a:hover, a:active {
-	outline: 0;
+  outline: 0;
 }
 
 a.btn-primary,
@@ -125,12 +117,12 @@ a.btn-alt {
 }
 
 a.btn-primary {
-  background-color: rgb(180, 9, 55);
+  background: rgb(180, 9, 55);
   color: rgb(255, 255, 255);
 }
 
 a.btn-primary:hover {
-  background-color: rgb(149, 0, 34);
+  background: rgb(149, 0, 34);
 }
 
 a.btn-alt {
@@ -190,11 +182,11 @@ a.arrow-link:hover::after {
 }
 
  /* Elements
- 	 ========================================================================== */
+ ========================================================================== */
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+  margin: 0 0 1.5em 3em;
 }
 
 ul > li,
@@ -219,7 +211,7 @@ table {
 }
 
 thead {
-  background-color: rgb(242, 243, 244);
+  background: rgb(242, 243, 244);
 }
 
 th,
@@ -234,12 +226,12 @@ tr {
   line-height: 2;
 }
 
-tr:hover {
+tr td:hover {
   background: rgb(210, 213, 219);
 }
 
 hr {
-  background-color: rgb(210, 213, 219);
+  background: rgb(210, 213, 219);
   border: 0;
   height: 1px;
 }
@@ -249,13 +241,8 @@ img {
   width: 100%;
 }
 
-/* Forms
-	 ========================================================================== */
-
-
-
-/* Page Content
-  ========================================================================== */
+/* Content
+========================================================================== */
 
 main {
   margin: 0 auto;
@@ -264,8 +251,8 @@ main {
 
 .gradient-img {
   align-items: center;
-  background: linear-gradient(45deg, rgba(180, 9, 55, .5), rgba(0, 102, 198, .25)),
-              url("img/aqua.jpg") no-repeat center;
+  background: linear-gradient(45deg, rgba(180, 9, 55, .5), rgba(0, 177, 255, .25)),
+              url("aqua.jpg") no-repeat center;
   background-size: cover;
   display: flex;
   height: 500px;
@@ -279,13 +266,13 @@ main {
 .dark-bg {
   background: rgb(36, 38, 43);
   color: rgb(255, 255, 255);
-  padding: 5vw;
+  padding: 1vw 5vw 5vw;
 }
 
 .red-bg {
-  background-color: rgb(180, 9, 55);
+  background: rgb(180, 9, 55);
   color: rgb(255, 255, 255);
-  padding: 2em;
+  padding: .5em 2em 2em;
   margin: 2em 0;
   width: 50vw;
 }
@@ -297,4 +284,46 @@ main {
   margin-right: -50vw;
   right: 50%;
   width: 100vw;
+}
+
+.color-palette {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 20vh 20vh;
+  grid-gap: 2em;
+  margin: 3em 0;
+}
+
+.red-block,
+.alt-table thead {
+  background: rgb(180, 9, 55);
+}
+
+.blue-block {
+  background: rgb(0, 103, 146);
+}
+
+.yellow-block {
+  background: rgb(252, 202, 73);
+}
+
+.black-block {
+  background: rgb(36, 38, 43);
+}
+
+.grey-block {
+  background: rgb(130, 132, 138);
+}
+
+.light-grey-block {
+  background: rgb(210, 213, 219);
+}
+
+.alt-table thead tr th {
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+}
+
+.alt-table tbody tr:nth-child(even) {
+  background: rgb(242, 243, 244);
 }
